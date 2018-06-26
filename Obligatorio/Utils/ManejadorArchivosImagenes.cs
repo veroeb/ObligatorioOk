@@ -12,8 +12,7 @@ namespace Obligatorio.Utils
     {
 
         private const String NOMBRE_ARCHIVO = "c:/imagenes.txt";
-
-
+        
         private static ManejadorArchivosImagenes instancia = null;
 
         private List<ImagenArchivo> elementos = new List<ImagenArchivo>();
