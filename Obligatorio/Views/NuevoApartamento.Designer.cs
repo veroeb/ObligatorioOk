@@ -407,6 +407,7 @@
             this.pbFoto1.Location = new System.Drawing.Point(767, 1113);
             this.pbFoto1.Name = "pbFoto1";
             this.pbFoto1.Size = new System.Drawing.Size(166, 154);
+            this.pbFoto1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbFoto1.TabIndex = 45;
             this.pbFoto1.TabStop = false;
             // 
@@ -415,6 +416,7 @@
             this.pbFoto2.Location = new System.Drawing.Point(968, 1113);
             this.pbFoto2.Name = "pbFoto2";
             this.pbFoto2.Size = new System.Drawing.Size(166, 154);
+            this.pbFoto2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbFoto2.TabIndex = 46;
             this.pbFoto2.TabStop = false;
             // 
@@ -427,10 +429,13 @@
             this.btnAgregarFotos.TabIndex = 47;
             this.btnAgregarFotos.Text = "Agregar fotos";
             this.btnAgregarFotos.UseVisualStyleBackColor = true;
+            this.btnAgregarFotos.Click += new System.EventHandler(this.btnAgregarFotos_Click);
             // 
             // ImagesFile
             // 
-            this.ImagesFile.FileName = "openFileDialog1";
+            this.ImagesFile.FileName = "ImagesFile";
+            this.ImagesFile.Filter = "Image Files(*.PNG;*.BMP;*.JPG;*.GIF)|*.PNG;*.BMP;*.JPG;*.GIF|All files (*.*)|*.*";
+            this.ImagesFile.FileOk += new System.ComponentModel.CancelEventHandler(this.ImagesFile_FileOk);
             // 
             // btnContinuar
             // 
@@ -445,6 +450,7 @@
             this.btnContinuar.TabIndex = 48;
             this.btnContinuar.Text = "Continuar";
             this.btnContinuar.UseVisualStyleBackColor = false;
+            this.btnContinuar.Click += new System.EventHandler(this.btnContinuar_Click);
             // 
             // cbDepartamento
             // 
@@ -622,6 +628,9 @@
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblApartamento);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximumSize = new System.Drawing.Size(1302, 1591);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1302, 1591);
             this.Name = "NuevoApartamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NuevoApartamento";
