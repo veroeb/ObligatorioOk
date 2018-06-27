@@ -16,5 +16,16 @@ namespace Obligatorio.Views
         {
             InitializeComponent();
         }
+
+        private void btnApartment_Click(object sender, EventArgs e)
+        {
+            Hide();
+            using (NuevoApartamento Apartmento = new NuevoApartamento())
+            {
+                Apartmento.ShowDialog();
+                //Environment.Exit(0);
+                Application.Exit();
+            }
+        }
     }
 }

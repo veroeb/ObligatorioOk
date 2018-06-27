@@ -17,7 +17,7 @@ namespace Obligatorio
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new NuevoApartamento());
+            Application.Run(new LaunchScreen());
         }
     }
 }
