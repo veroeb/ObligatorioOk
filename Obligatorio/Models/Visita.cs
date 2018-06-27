@@ -20,6 +20,7 @@ namespace Obligatorio.Models
         public static void AgregarComprador(Comprador comprador)
         {
             ListaCompradores.Add(comprador);
+            //ListaCompradores.Sort();
             AgregarCompradorArchivo();
         }
 

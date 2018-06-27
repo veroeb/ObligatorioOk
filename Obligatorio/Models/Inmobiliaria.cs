@@ -20,9 +20,7 @@ namespace Obligatorio.Models
             return Instancia;
         }
         #endregion
-
-        private List<Comprador> CompradoresAlfabeticamente { get; set; }
-
+        
         /// <summary>
         /// Listado de inmuebles
         /// </summary>
@@ -47,8 +45,7 @@ namespace Obligatorio.Models
         /// <returns></returns>
         public List<Comprador> ListaCompradoresAlfabeticamente()
         {
-            CompradoresAlfabeticamente = Visita.ListaCompradores.Sort();
-            return CompradoresAlfabeticamente;
+            return Visita.ListaCompradores.OrderBy(x => x.Nombre).ToList();
         }
     }
 }
