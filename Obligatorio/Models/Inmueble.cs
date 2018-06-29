@@ -20,7 +20,7 @@ namespace Obligatorio.Models
         public string Ubicacion { get; set; }
         public string Estado { get; set; }
         //public EstadoInmueble Estado { get; set; }
-        public float GastosComunes { get; set; }
+        //public float GastosComunes { get; set; }
         public int Garages { get; set; }
         public bool Parrillero { get; set; }
         public string Comentarios { get; set; }

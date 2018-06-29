@@ -10,9 +10,9 @@ namespace Obligatorio.Models
     public static class ManagerInmuebles
     {
         public static List<Inmueble> ListaInmuebles = new List<Inmueble>();
-
         static ManejadorDeArchivos manejadorDeArchivos = new ManejadorDeArchivos();
         static ManejadorArchivosImagenes ManejadorArchivosImagenes = new ManejadorArchivosImagenes();
+
 
         public static void AgregarPropiedad(Inmueble InmuebleaAgregar)
         {

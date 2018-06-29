@@ -8,6 +8,7 @@ namespace Obligatorio.Models
 {
     public class Apartamento : Inmueble
     {
+        public int GastosComunes { get; set; }
         public int NroPiso { get; set; }
         public int CantidadPisos { get; set; }
         public bool Porteria { get; set; }

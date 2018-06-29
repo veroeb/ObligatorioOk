@@ -42,18 +42,16 @@
             this.panel1.Controls.Add(this.btnApartment);
             this.panel1.Controls.Add(this.btnhouse);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1632, 913);
+            this.panel1.Size = new System.Drawing.Size(816, 475);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(64, 40);
-            this.button4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button4.Location = new System.Drawing.Point(32, 21);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 44);
+            this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 4;
             this.button4.Text = "<-- Atras";
             this.button4.UseVisualStyleBackColor = true;
@@ -68,10 +66,9 @@
             this.btnApartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApartment.Font = new System.Drawing.Font("Calibri", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnApartment.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnApartment.Location = new System.Drawing.Point(830, 287);
-            this.btnApartment.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnApartment.Location = new System.Drawing.Point(415, 135);
             this.btnApartment.Name = "btnApartment";
-            this.btnApartment.Size = new System.Drawing.Size(552, 277);
+            this.btnApartment.Size = new System.Drawing.Size(276, 144);
             this.btnApartment.TabIndex = 3;
             this.btnApartment.Text = "Apartamento";
             this.btnApartment.UseVisualStyleBackColor = false;
@@ -85,10 +82,9 @@
             this.btnhouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnhouse.Font = new System.Drawing.Font("Calibri", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnhouse.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnhouse.Location = new System.Drawing.Point(272, 310);
-            this.btnhouse.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnhouse.Location = new System.Drawing.Point(136, 147);
             this.btnhouse.Name = "btnhouse";
-            this.btnhouse.Size = new System.Drawing.Size(392, 231);
+            this.btnhouse.Size = new System.Drawing.Size(196, 120);
             this.btnhouse.TabIndex = 2;
             this.btnhouse.Text = "Casa";
             this.btnhouse.UseVisualStyleBackColor = false;
@@ -96,12 +92,12 @@
             // 
             // NuevoInmueble
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1620, 900);
+            this.ClientSize = new System.Drawing.Size(803, 385);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NuevoInmueble";

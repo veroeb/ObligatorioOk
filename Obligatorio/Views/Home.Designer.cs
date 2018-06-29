@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnAgregarComprador = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.Vender = new System.Windows.Forms.Button();
+            this.Agendar = new System.Windows.Forms.Button();
+            this.Actualizar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -60,10 +60,11 @@
             this.btnVenta = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox4
@@ -117,44 +118,35 @@
             this.textBox1.TabIndex = 20;
             this.textBox1.Text = "Nombre";
             // 
-            // button7
+            // Vender
             // 
-            this.button7.Location = new System.Drawing.Point(761, 17);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(136, 40);
-            this.button7.TabIndex = 19;
-            this.button7.Text = "Vender o alquilar $";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.Vender.Location = new System.Drawing.Point(761, 17);
+            this.Vender.Name = "Vender";
+            this.Vender.Size = new System.Drawing.Size(136, 40);
+            this.Vender.TabIndex = 19;
+            this.Vender.Text = "Vender o alquilar $";
+            this.Vender.UseVisualStyleBackColor = true;
+            this.Vender.Click += new System.EventHandler(this.Vender_Click);
             // 
-            // button6
+            // Agendar
             // 
-            this.button6.Location = new System.Drawing.Point(761, 63);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(136, 40);
-            this.button6.TabIndex = 18;
-            this.button6.Text = "Agendar visita";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.Agendar.Location = new System.Drawing.Point(761, 63);
+            this.Agendar.Name = "Agendar";
+            this.Agendar.Size = new System.Drawing.Size(136, 40);
+            this.Agendar.TabIndex = 18;
+            this.Agendar.Text = "Agendar visita";
+            this.Agendar.UseVisualStyleBackColor = true;
+            this.Agendar.Click += new System.EventHandler(this.Agendar_Click);
             // 
-            // button5
+            // Actualizar
             // 
-            this.button5.Location = new System.Drawing.Point(761, 109);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(136, 40);
-            this.button5.TabIndex = 17;
-            this.button5.Text = "Actualizar ๑";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(345, 14);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(410, 212);
-            this.listBox1.TabIndex = 16;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.Actualizar.Location = new System.Drawing.Point(761, 109);
+            this.Actualizar.Name = "Actualizar";
+            this.Actualizar.Size = new System.Drawing.Size(136, 40);
+            this.Actualizar.TabIndex = 17;
+            this.Actualizar.Text = "Actualizar ๑";
+            this.Actualizar.UseVisualStyleBackColor = true;
+            this.Actualizar.Click += new System.EventHandler(this.Actualizar_Click);
             // 
             // panel3
             // 
@@ -409,32 +401,32 @@
             this.panel5.Size = new System.Drawing.Size(176, 32);
             this.panel5.TabIndex = 4;
             // 
-            // checkBox1
+            // dataGridView1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(232, 444);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 16;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(349, 17);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(406, 203);
+            this.dataGridView1.TabIndex = 26;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(926, 489);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnAgregarComprador);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.Vender);
+            this.Controls.Add(this.Agendar);
+            this.Controls.Add(this.Actualizar);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -451,6 +443,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -464,10 +457,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnAgregarComprador;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button Vender;
+        private System.Windows.Forms.Button Agendar;
+        private System.Windows.Forms.Button Actualizar;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -490,6 +482,6 @@
         private System.Windows.Forms.Button btnVenta;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

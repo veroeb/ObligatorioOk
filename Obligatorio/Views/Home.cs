@@ -16,7 +16,7 @@ namespace Obligatorio.Views
         Comprador CompradorActual;
         Inmueble InmuebleActual;
         Inmobiliaria inmobiliaria = Inmobiliaria.GetInmobiliaria();
-        
+        LaunchScreen launch = new LaunchScreen();
 
         public Home()
         {
@@ -30,9 +30,8 @@ namespace Obligatorio.Views
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Hide();
-            NuevoInmueble nuevoInmueble = new NuevoInmueble();
-            nuevoInmueble.Show();
+            Hide();            
+            launch.Show();
         }
 
         public void Filtro()
@@ -57,20 +56,13 @@ namespace Obligatorio.Views
                 if (filtrarPorGarage)
                     listaInmuebles = listaInmuebles.Where(x => x.Garages == Convert.ToInt32(comboBoxGarage.SelectedItem.ToString())).ToList();
             }
-        }
+        }        
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void Actualizar_Click(object sender, EventArgs e)
         {
-            //inmobiliaria.GetListaInmuebles();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            listBox1.Items.Clear();
-            foreach (Inmueble i in inmobiliaria.GetListaInmuebles())
-            {
-                listBox1.Items.Add(i.Precio + " " + i.Parrillero);
-            }
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = ManagerInmuebles.ListaInmuebles;
+            
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -78,22 +70,40 @@ namespace Obligatorio.Views
 
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void Vender_Click(object sender, EventArgs e)
         {
-            //Inmobiliaria.GetInmobiliaria().VenderAlquilar(InmuebleActual, CompradorActual);
+            InmuebleActual = (dataGridView1.SelectedRows[0].DataBoundItem as Inmueble);
+            Comprador comprador = new Comprador(textBox1.Text, textBox4.Text, textBox3.Text, textBox2.Text);
+            CompradorActual = comprador; 
             ManagerInmuebles.VenderAlquilar(InmuebleActual, CompradorActual);
+            MessageBox.Show("Propiedad vendida a " + CompradorActual.Nombre);
+            dataGridView1.DataSource = ManagerInmuebles.ListaInmuebles;
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void Agendar_Click(object sender, EventArgs e)
         {
-            //ManagerInmuebles.
+            InmuebleActual = (dataGridView1.SelectedRows[0].DataBoundItem as Inmueble);
+            inmobiliaria.AgendarVisita(CompradorActual, InmuebleActual);
+            MessageBox.Show("Visita Agendada correctamente con " + CompradorActual.Nombre);
+            
         }
 
         private void btnAgregarComprador_Click(object sender, EventArgs e)
         {
             Comprador comprador = new Comprador(textBox1.Text, textBox4.Text, textBox3.Text, textBox2.Text);
             CompradorActual = comprador;
-            Visita.AgregarComprador(CompradorActual);
+            Inmobiliaria.AgregarComprador(CompradorActual);
+            MessageBox.Show("Comprador actual actualizado y agendado");
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();            
         }
     }
 }

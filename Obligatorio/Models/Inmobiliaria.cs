@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Obligatorio.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,9 @@ namespace Obligatorio.Models
 {
     public class Inmobiliaria
     {
+        public static DateTime Fecha { get; set; }
+        public static List<Comprador> ListaCompradores = new List<Comprador>();
+        public static ManejadorDeArchivos manejadorDeArchivos = new ManejadorDeArchivos();
         #region Singleton
         public static Inmobiliaria Instancia = null;
         public static Inmobiliaria GetInmobiliaria()
@@ -45,7 +49,30 @@ namespace Obligatorio.Models
         /// <returns></returns>
         public List<Comprador> ListaCompradoresAlfabeticamente()
         {
-            return Visita.ListaCompradores.OrderBy(x => x.Nombre).ToList();
+            return ListaCompradores.OrderBy(x => x.Nombre).ToList();
+        }   
+        public static void AgregarComprador(Comprador comprador)
+        {
+            ListaCompradores.Add(comprador);
+            //ListaCompradores.Sort();
+            AgregarCompradorArchivo();
+        }
+
+        public static void AgregarCompradorArchivo()
+        {
+            foreach (Comprador c in ListaCompradores)
+            {
+                manejadorDeArchivos.Escribir("Lista de compradores.txt", $"{Fecha}" +                     
+                     $" Nombre: {c.Nombre}," +
+                     $" CI: {c.CI}," +
+                     $" Correo: {c.Correo}," +
+                     $" Telefono: {c.Telefono},");
+            }
+        }
+
+        public void AgendarVisita(Comprador c, Inmueble i)
+        {
+            
         }
     }
 }

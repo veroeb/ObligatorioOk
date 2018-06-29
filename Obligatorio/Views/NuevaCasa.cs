@@ -15,8 +15,9 @@ namespace Obligatorio.Views
     {
         public NuevaCasa()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
+        Home home = new Home();
 
         private void btnContinuar_Click(object sender, EventArgs e)
         {
@@ -36,7 +37,7 @@ namespace Obligatorio.Views
                 Garages = ManagerRecursos.garages,
                 Parrillero = ManagerRecursos.parrillero,
                 Jardin = ManagerRecursos.jardin,
-                GastosComunes = ManagerRecursos.gastosComunes,
+                //GastosComunes = ManagerRecursos.gastosComunes,
                 Fotos = ManagerRecursos.fotos
             };
 
@@ -44,7 +45,6 @@ namespace Obligatorio.Views
             MessageBox.Show("Propiedad agregada correctamente");
             
             Hide();
-            Home home = new Home();
             home.Show();
         }
 
@@ -194,7 +194,6 @@ namespace Obligatorio.Views
         private void btnHome_Click(object sender, EventArgs e)
         {
             Hide();
-            Home home = new Home();
             home.Show();
         }
 

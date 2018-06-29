@@ -8,7 +8,7 @@ namespace Obligatorio.Models
 {
     public class Comprador : Persona
     {
-        private List<Visita> Visitas { get; set; }
+        //public List<Visita> Visitas = new List<Visita>();
         private List<Inmueble> PropiedadesVisitadas { get; set; }
 
         public Comprador(String nombre, String ci, String correo, String telefono) : base(ci, nombre, correo, telefono)

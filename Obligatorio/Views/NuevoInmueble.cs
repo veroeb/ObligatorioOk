@@ -13,12 +13,15 @@ namespace Obligatorio.Views
 {
     public partial class NuevoInmueble : Form
     {
+        Home home = new Home();
         public NuevoInmueble()
         {
             InitializeComponent();
 
             Clear();         
         }
+
+        
 
         private void Clear()
         {
@@ -73,7 +76,6 @@ namespace Obligatorio.Views
         private void button4_Click(object sender, EventArgs e)
         {
             Hide();
-            Home home = new Home();
             home.Show();
         }
 

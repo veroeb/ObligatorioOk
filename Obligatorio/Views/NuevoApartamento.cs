@@ -17,6 +17,7 @@ namespace Obligatorio.Views
         {
             InitializeComponent();
         }
+        Home home = new Home();
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -41,7 +42,7 @@ namespace Obligatorio.Views
                 Garages = ManagerRecursos.garages,
                 Parrillero = ManagerRecursos.parrillero,
                 Porteria = ManagerRecursos.portero,
-                GastosComunes = ManagerRecursos.gastosComunes,
+                //GastosComunes = ManagerRecursos.gastosComunes,
                 Fotos = ManagerRecursos.fotos
             };
 
@@ -222,7 +223,6 @@ namespace Obligatorio.Views
         private void btnHome_Click(object sender, EventArgs e)
         {
             Hide();
-            Home home = new Home();
             home.Show();
         }
     }

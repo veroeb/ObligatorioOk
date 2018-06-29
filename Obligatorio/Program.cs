@@ -1,4 +1,5 @@
-﻿using Obligatorio.Views;
+﻿using Obligatorio.Models;
+using Obligatorio.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,13 @@ namespace Obligatorio
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LaunchScreen());
+
+            Home home = new Home();
+            LaunchScreen Launch = new LaunchScreen();
+            NuevaCasa nuevaCasa = new NuevaCasa();
+            NuevoApartamento nuevoapto = new NuevoApartamento();
+
+
         }
     }
 }
