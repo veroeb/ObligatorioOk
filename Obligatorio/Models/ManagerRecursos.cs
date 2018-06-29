@@ -15,6 +15,7 @@ namespace Obligatorio.Models
         public static string barrio;
         public static string direccionInmueble;
         public static string estado;
+        //public static EstadoInmueble estado;
         public static int año;
         public static float superficie;
         public static int habitaciones;

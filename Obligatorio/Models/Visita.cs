@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Obligatorio.Models
 {
-    public static class Visita
+    public class Visita
     {
         public static DateTime Fecha { get; set; }
         public static string Comentario { get; set; }

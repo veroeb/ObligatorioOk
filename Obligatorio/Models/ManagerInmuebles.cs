@@ -9,7 +9,7 @@ namespace Obligatorio.Models
 {
     public static class ManagerInmuebles
     {
-        public static List<Inmueble> ListaInmuebles;
+        public static List<Inmueble> ListaInmuebles = new List<Inmueble>();
 
         static ManejadorDeArchivos manejadorDeArchivos = new ManejadorDeArchivos();
         static ManejadorArchivosImagenes ManejadorArchivosImagenes = new ManejadorArchivosImagenes();
@@ -32,7 +32,7 @@ namespace Obligatorio.Models
             {
                 if (i is Casa)
                 {
-                    manejadorDeArchivos.Escribir("Listado de propiedades.txt", $"Precio: U$S {i.Precio}," +
+                    manejadorDeArchivos.Escribir("Listado de propiedades.txt", $"Precio {i.Precio};" +
                         $" habitaciones: {i.CantidadHabitaciones}," +
                         $" dormitorios: {i.CantidadDormitorios}," +
                         $" baños: {i.CantidadBaños}," +

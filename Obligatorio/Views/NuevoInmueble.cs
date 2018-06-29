@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Obligatorio.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,16 +16,19 @@ namespace Obligatorio.Views
         public NuevoInmueble()
         {
             InitializeComponent();
+
+            ManagerRecursos.barrio = "";
+            ManagerRecursos.año = 0;
         }
 
         private void btnApartment_Click(object sender, EventArgs e)
         {
             Hide();
-            using (NuevoApartamento Apartmento = new NuevoApartamento())
+            using (NuevoApartamento Apartamento = new NuevoApartamento())
             {
-                Apartmento.ShowDialog();
+                Apartamento.ShowDialog();
                 //Environment.Exit(0);
-                Application.Exit();
+                //Application.Exit();
             }
         }
     }

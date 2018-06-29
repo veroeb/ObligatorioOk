@@ -32,7 +32,7 @@ namespace Obligatorio.Views
                 Ciudad = ManagerRecursos.ciudad,
                 Barrio = ManagerRecursos.barrio,
                 Ubicacion = ManagerRecursos.direccionInmueble,
-                //Estado = ManagerRecursos.estado,
+                Estado = ManagerRecursos.estado,
                 AñoConstruccion = ManagerRecursos.año,
                 MetrosEdificados = ManagerRecursos.superficie,
                 CantidadHabitaciones = ManagerRecursos.habitaciones,
@@ -71,6 +71,15 @@ namespace Obligatorio.Views
 
             //    //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             //}
+            if (ImagesFile.ShowDialog() == DialogResult.OK)
+            {
+                //lblImage.Text = openFileDialog1.FileName;
+                MessageBox.Show(ImagesFile.FileName);
+
+                pbFoto1.Load(ImagesFile.FileName);
+
+                //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
         }
 
         private void txtPrecio_TextChanged(object sender, EventArgs e)
@@ -101,11 +110,12 @@ namespace Obligatorio.Views
         private void cbEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
             ManagerRecursos.estado = cbEstado.SelectedItem.ToString();
+            //Enum.TryParse<EstadoInmueble>(cbEstado.SelectedValue.ToString(), out ManagerRecursos.estado);
         }
 
         private void txtConstruccion_TextChanged(object sender, EventArgs e)
         {
-            ManagerRecursos.año = Convert.ToInt32(txtAñoConstruccion);
+            ManagerRecursos.año = Convert.ToInt32(txtAñoConstruccion.Text);
         }
 
         private void txtSuperficie_TextChanged(object sender, EventArgs e)
@@ -185,6 +195,11 @@ namespace Obligatorio.Views
         private void txtComentarios_TextChanged(object sender, EventArgs e)
         {
             ManagerRecursos.comentarios = txtComentarios.Text;
+        }
+
+        private void NuevoApartamento_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

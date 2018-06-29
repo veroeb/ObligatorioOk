@@ -18,7 +18,8 @@ namespace Obligatorio.Models
         public string Ciudad { get; set; }
         public string Barrio { get; set; }
         public string Ubicacion { get; set; }
-        public EstadoInmueble Estado { get; set; }
+        public string Estado { get; set; }
+        //public EstadoInmueble Estado { get; set; }
         public float GastosComunes { get; set; }
         public int Garages { get; set; }
         public bool Parrillero { get; set; }
