@@ -72,5 +72,34 @@ namespace Obligatorio.Models
                 }
             }
         }
+
+
+        /* 
+         * ver si poner el filtro aca
+         */
+    
+        //public static void Filtro()
+        //{
+        //    bool filtrarPorDepartamento = true;
+        //    bool filtrarPorBarrio = true;
+        //    bool filtrarPorGarage = true;
+
+        //    //List<Inmueble> listaInmuebles = new List<Inmueble>();
+
+        //    Inmobiliaria inmobiliaria = Inmobiliaria.GetInmobiliaria();
+
+        //    List<Inmueble> listaInmuebles = new List<Inmueble>();
+        //    listaInmuebles = inmobiliaria.GetListaInmuebles();
+
+        //    foreach (Inmueble i in listaInmuebles)
+        //    {
+        //        if (filtrarPorDepartamento)
+        //            listaInmuebles = listaInmuebles.Where(x => x.Departamento == comboBoxDepartamento.SelectedItem.ToString()).ToList();
+        //        if (filtrarPorBarrio)
+        //            listaInmuebles = listaInmuebles.Where(x => x.Barrio == comboBoxBarrio.SelectedItem.ToString()).ToList();
+        //        if (filtrarPorGarage)
+        //            listaInmuebles = listaInmuebles.Where(x => x.Garages == Convert.ToInt32(comboBoxGarage.SelectedItem.ToString())).ToList();
+        //    }
+        //}
     }
 }
