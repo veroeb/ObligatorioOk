@@ -42,6 +42,7 @@ namespace Obligatorio.Views
                 Parrillero = ManagerRecursos.parrillero,
                 Porteria = ManagerRecursos.portero,
                 GastosComunes = ManagerRecursos.gastosComunes,
+                Fotos = ManagerRecursos.fotos
             };
 
             ManagerInmuebles.AgregarPropiedad(apartamento);
@@ -75,10 +76,9 @@ namespace Obligatorio.Views
             //}
             if (ImagesFile.ShowDialog() == DialogResult.OK)
             {
-                //lblImage.Text = openFileDialog1.FileName;
-                MessageBox.Show(ImagesFile.FileName);
-
                 pbFoto1.Load(ImagesFile.FileName);
+                ManagerRecursos.fotos = ImagesFile.FileName;
+                MessageBox.Show(ImagesFile.FileName);
 
                 //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }

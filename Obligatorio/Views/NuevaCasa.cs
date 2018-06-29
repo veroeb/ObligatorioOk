@@ -37,6 +37,7 @@ namespace Obligatorio.Views
                 Parrillero = ManagerRecursos.parrillero,
                 Jardin = ManagerRecursos.jardin,
                 GastosComunes = ManagerRecursos.gastosComunes,
+                Fotos = ManagerRecursos.fotos
             };
 
             ManagerInmuebles.AgregarPropiedad(casa);
@@ -175,9 +176,10 @@ namespace Obligatorio.Views
         {
             if (ImagesFile.ShowDialog() == DialogResult.OK)
             {
+                pbFoto1.Load(ImagesFile.FileName);
+                ManagerRecursos.fotos = ImagesFile.FileName;
                 MessageBox.Show(ImagesFile.FileName);
 
-                pbFoto1.Load(ImagesFile.FileName);
                 //string[] files = ImagesFile.FileNames;
 
                 //foreach(string img in files)

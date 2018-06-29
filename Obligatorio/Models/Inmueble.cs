@@ -25,6 +25,7 @@ namespace Obligatorio.Models
         public bool Parrillero { get; set; }
         public string Comentarios { get; set; }
         //public List<string> Comentarios { get; set; }
-        public List<string> Fotos { get; set; }
+        //public List<string> Fotos { get; set; }
+        public string Fotos { get; set; }
     }
 }

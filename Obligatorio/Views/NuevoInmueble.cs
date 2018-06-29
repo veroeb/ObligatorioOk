@@ -76,5 +76,10 @@ namespace Obligatorio.Views
             Home home = new Home();
             home.Show();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

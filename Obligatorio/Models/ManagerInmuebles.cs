@@ -44,10 +44,11 @@ namespace Obligatorio.Models
                         $" estado fisico: {i.Estado}," +
                         $" garages: {i.Garages}," +
                         $" direccion: {i.Ubicacion}," +
-                        $" jardin: {(i as Casa).Jardin}," +
-                        $" patio: {(i as Casa).Patio}," +
-                        $" parrillero: {i.Parrillero}," +
-                        $" comentarios: {i.Comentarios}.");
+                        $" jardin: {Global.BooleanToString((i as Casa).Jardin)}," +
+                        $" patio: {Global.BooleanToString((i as Casa).Patio)}," +
+                        $" parrillero: {Global.BooleanToString(i.Parrillero)}," +
+                        $" comentarios: {i.Comentarios}," +
+                        $" fotos: {i.Fotos}.");
                 }
                 else if (i is Apartamento)
                 {
@@ -64,11 +65,13 @@ namespace Obligatorio.Models
                         $" garages: {i.Garages}," +
                         $" direccion: {i.Ubicacion}," +
                         $" numero de piso: {(i as Apartamento).NroPiso}," +
-                        $" porteria: {(i as Apartamento).Porteria}," +
-                        $" parrillero: {i.Parrillero}," +
+                        $" porteria: {Global.BooleanToString((i as Apartamento).Porteria)}," +
+                        $" parrillero: {Global.BooleanToString(i.Parrillero)}," +
                         $" total de pisos: {(i as Apartamento).CantidadPisos}," +
                         $" gastos comunes: {(i as Apartamento).GastosComunes}," +
-                        $" comentarios: {i.Comentarios}.");
+                        $" comentarios: {i.Comentarios}," +
+                        $" fotos: {i.Fotos}.");
+
                 }
             }
         }
