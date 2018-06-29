@@ -11,21 +11,16 @@ using System.Windows.Forms;
 
 namespace Obligatorio.Views
 {
-    public partial class NuevoApartamento : Form
+    public partial class NuevaCasa : Form
     {
-        public NuevoApartamento()
+        public NuevaCasa()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnContinuar_Click(object sender, EventArgs e)
         {
-            Apartamento apartamento = new Apartamento
+            Casa casa = new Casa
             {
                 Precio = ManagerRecursos.precio,
                 Departamento = ManagerRecursos.departamento,
@@ -40,48 +35,16 @@ namespace Obligatorio.Views
                 CantidadBaños = ManagerRecursos.baños,
                 Garages = ManagerRecursos.garages,
                 Parrillero = ManagerRecursos.parrillero,
-                Porteria = ManagerRecursos.portero,
+                Jardin = ManagerRecursos.jardin,
                 GastosComunes = ManagerRecursos.gastosComunes,
             };
 
-            ManagerInmuebles.AgregarPropiedad(apartamento);
+            ManagerInmuebles.AgregarPropiedad(casa);
             MessageBox.Show("Propiedad agregada correctamente");
-
-
+            
             Hide();
             Home home = new Home();
             home.Show();
-            //using (Home home = new Home())
-            //{
-            //    home.ShowDialog();
-            //    //Application.Exit();
-            //}
-        }
-
-        private void ImagesFile_FileOk(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void btnAgregarFotos_Click(object sender, EventArgs e)
-        {
-            //if (ImagesFile.ShowDialog() == DialogResult.OK)
-            //{
-            //    //lblImage.Text = openFileDialog1.FileName;
-            //    if(pbFoto1.)
-            //    pbFoto1.Load(ImagesFile.FileName);
-
-            //    //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            //}
-            if (ImagesFile.ShowDialog() == DialogResult.OK)
-            {
-                //lblImage.Text = openFileDialog1.FileName;
-                MessageBox.Show(ImagesFile.FileName);
-
-                pbFoto1.Load(ImagesFile.FileName);
-
-                //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            }
         }
 
         private void txtPrecio_TextChanged(object sender, EventArgs e)
@@ -112,10 +75,9 @@ namespace Obligatorio.Views
         private void cbEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
             ManagerRecursos.estado = cbEstado.SelectedItem.ToString();
-            //Enum.TryParse<EstadoInmueble>(cbEstado.SelectedValue.ToString(), out ManagerRecursos.estado);
         }
 
-        private void txtConstruccion_TextChanged(object sender, EventArgs e)
+        private void txtAñoConstruccion_TextChanged(object sender, EventArgs e)
         {
             ManagerRecursos.año = Convert.ToInt32(txtAñoConstruccion.Text);
         }
@@ -137,7 +99,7 @@ namespace Obligatorio.Views
 
         private void cbBaños_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ManagerRecursos.baños = Convert.ToInt32(cbBaños.SelectedItem.ToString());
+            ManagerRecursos.baños = Convert.ToInt32(cbBaños.SelectedItem.ToString());        
         }
 
         private void cbGarages_SelectedIndexChanged(object sender, EventArgs e)
@@ -157,16 +119,26 @@ namespace Obligatorio.Views
             }
         }
 
-        private void cbPorteria_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbJardin_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbPorteria.SelectedItem.ToString() == "Si" || cbPorteria.SelectedItem.ToString() == "si")
+            if (cbJardin.SelectedItem.ToString() == "Si" || cbJardin.SelectedItem.ToString() == "si")
             {
-                ManagerRecursos.portero = true;
+                ManagerRecursos.jardin = true;
             }
-            else if (cbPorteria.SelectedItem.ToString() == "No" || cbPorteria.SelectedItem.ToString() == "no")
+            else if (cbJardin.SelectedItem.ToString() == "No" || cbJardin.SelectedItem.ToString() == "no")
             {
-                ManagerRecursos.portero = false;
+                ManagerRecursos.jardin = false;
             }
+        }
+
+        private void txtGastos_TextChanged(object sender, EventArgs e)
+        {
+            ManagerRecursos.gastosComunes = float.Parse(txtGastos.Text);
+        }
+
+        private void txtTitulo_TextChanged(object sender, EventArgs e)
+        {
+            ManagerRecursos.titulo = txtTitulo.Text;
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
@@ -199,24 +171,22 @@ namespace Obligatorio.Views
             ManagerRecursos.comentarios = txtComentarios.Text;
         }
 
-        private void NuevoApartamento_Load(object sender, EventArgs e)
+        private void btnAgregarFotos_Click(object sender, EventArgs e)
         {
+            if (ImagesFile.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show(ImagesFile.FileName);
 
-        }
+                pbFoto1.Load(ImagesFile.FileName);
+                //string[] files = ImagesFile.FileNames;
 
-        private void NuevoApartamento_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void txtGastos_TextChanged(object sender, EventArgs e)
-        {
-            ManagerRecursos.gastosComunes = float.Parse(txtGastos.Text);
-        }
-
-        private void txtTitulo_TextChanged(object sender, EventArgs e)
-        {
-            ManagerRecursos.titulo = txtTitulo.Text;
+                //foreach(string img in files)
+                //{
+                //    PictureBox pic = new PictureBox();
+                //    pic.Image = Image.FromFile(img);
+                //    //pic.Location = pbFoto2;
+                //}
+            }
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -224,6 +194,11 @@ namespace Obligatorio.Views
             Hide();
             Home home = new Home();
             home.Show();
+        }
+
+        private void NuevaCasa_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

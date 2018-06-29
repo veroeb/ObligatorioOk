@@ -145,8 +145,13 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnInmueble);
             this.Controls.Add(this.btnHome);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LaunchScreen";
-            this.Text = "LaunchScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "POP3";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LaunchScreen_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

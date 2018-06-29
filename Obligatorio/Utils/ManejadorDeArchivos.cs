@@ -27,26 +27,26 @@ namespace Obligatorio.Utils
             return lineasArchivo;
         }
 
-        public List<Inmueble> InfoArchivo(String path)
-        {
-            Alumnos = new List<Alumno>();
+        //public List<Inmueble> InfoArchivo(String path)
+        //{
+        //    Alumnos = new List<Alumno>();
 
-            List<String> lineasArchivo = Leer(path);
+        //    List<String> lineasArchivo = Leer(path);
 
-            String[] lineaPalabras;
+        //    String[] lineaPalabras;
 
-            foreach (String l in lineasArchivo)
-            {
-                lineaPalabras = l.Split(',');
-                String Nombre = lineaPalabras[0];
-                String Apellido = lineaPalabras[1];
-                String CI = lineaPalabras[2];
+        //    foreach (String l in lineasArchivo)
+        //    {
+        //        lineaPalabras = l.Split(',');
+        //        String Nombre = lineaPalabras[0];
+        //        String Apellido = lineaPalabras[1];
+        //        String CI = lineaPalabras[2];
 
-                Alumnos.Add(new Alumno(Nombre, Apellido, CI));
-            }
+        //        Alumnos.Add(new Alumno(Nombre, Apellido, CI));
+        //    }
 
-            return Alumnos;
-        }
+        //    return Alumnos;
+        //}
 
     }
 

@@ -54,6 +54,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "<-- Atras";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnApartment
             // 
@@ -86,6 +87,7 @@
             this.btnhouse.TabIndex = 2;
             this.btnhouse.Text = "Casa";
             this.btnhouse.UseVisualStyleBackColor = false;
+            this.btnhouse.Click += new System.EventHandler(this.btnhouse_Click);
             // 
             // NuevoInmueble
             // 
@@ -93,9 +95,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(810, 468);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "NuevoInmueble";
-            this.Text = "NuevoInmueble";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "POP3";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NuevoInmueble_FormClosed);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

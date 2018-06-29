@@ -24,18 +24,25 @@ namespace Obligatorio.Views
             {
                 Home.ShowDialog();
                 //Environment.Exit(0);
-                Application.Exit();
+                //Application.Exit();
             }
         }
 
         private void btnInmueble_Click(object sender, EventArgs e)
         {
             Hide();
-            using (NuevoInmueble nuevoInmueble = new NuevoInmueble())
-            {
-                nuevoInmueble.ShowDialog();
-                Application.Exit();
-            }
+            NuevoInmueble nuevoInmueble = new NuevoInmueble();
+            nuevoInmueble.Show();
+            //using (NuevoInmueble nuevoInmueble = new NuevoInmueble())
+            //{
+            //    nuevoInmueble.ShowDialog();
+            //    //Application.Exit();
+            //}
+        }
+
+        private void LaunchScreen_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
