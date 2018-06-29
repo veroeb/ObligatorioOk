@@ -93,6 +93,8 @@ namespace Obligatorio.Views
         {
             Comprador comprador = new Comprador(textBox1.Text, textBox4.Text, textBox3.Text, textBox2.Text);
             CompradorActual = comprador;
+            Visita.AgregarComprador(CompradorActual);
+            Visita.AgregarCompradorArchivo();
         }
     }
 }
