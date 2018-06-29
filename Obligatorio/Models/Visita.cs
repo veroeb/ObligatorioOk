@@ -13,9 +13,8 @@ namespace Obligatorio.Models
         public static string Comentario { get; set; }
         public static Comprador Comprador { get; set; }    
         public static Inmueble Inmueble { get; set; }
-        public static List<Comprador> ListaCompradores { get; set; }
-        public static ManejadorDeArchivos manejadorDeArchivos { get; set; }
-
+        public static List<Comprador> ListaCompradores = new List<Comprador>();
+        public static ManejadorDeArchivos manejadorDeArchivos = new ManejadorDeArchivos();
 
         public static void AgregarComprador(Comprador comprador)
         {
